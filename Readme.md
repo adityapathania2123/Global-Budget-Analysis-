@@ -1,8 +1,8 @@
-````markdown
 # 🏛️ Global Government Budget Analytics Core
 
-> An interactive data analytics platform for analyzing government budgets, sector-wise spending, fiscal anomalies, volatility, correlations, and future budget trends.
+> **An interactive data analytics platform for analyzing government budgets, sector-wise spending, fiscal anomalies, volatility, correlations, and future budget trends.**
 
+---
 
 ## 📌 Project Overview
 
@@ -10,17 +10,21 @@
 
 The project combines:
 
-- 🐍 Python
-- 🗄️ MySQL
-- 📊 Streamlit
-- 📈 Plotly
-- 🐼 Pandas
-- 🔢 NumPy
-- 🧮 SQL Window Functions
+- 🐍 **Python**
+- 🗄️ **MySQL**
+- 📊 **Streamlit**
+- 📈 **Plotly**
+- 🐼 **Pandas**
+- 🔢 **NumPy**
+- 🧮 **SQL Window Functions**
 
-The system follows an **ETL → Database → Analytics → Dashboard** architecture.
+The system follows an:
 
-Raw government budget data is loaded from CSV, transformed and stored in a normalized MySQL database, and then analyzed through Python-based analytical modules and an interactive Streamlit dashboard.
+**ETL → Database → Analytics → Dashboard**
+
+architecture.
+
+Raw government budget data is loaded from a CSV file, transformed and stored in a normalized MySQL database, and then analyzed through Python-based analytical modules and an interactive Streamlit dashboard.
 
 ---
 
@@ -28,51 +32,51 @@ Raw government budget data is loaded from CSV, transformed and stored in a norma
 
 The main objectives of this project are:
 
-- Analyze historical government budget trends.
-- Compare spending across countries.
-- Understand sector-wise budget allocation.
-- Identify unusual fiscal spending patterns.
-- Measure budget volatility over time.
-- Analyze relationships between government sectors.
-- Compare civilian and defense expenditure.
-- Forecast future budget trends.
+- 📊 Analyze historical government budget trends
+- 🌍 Compare spending across countries
+- 🏛️ Understand sector-wise budget allocation
+- 🔍 Identify unusual fiscal spending patterns
+- 📉 Measure budget volatility over time
+- 🔗 Analyze relationships between government sectors
+- 🛡️ Compare civilian and defense expenditure
+- 🔮 Forecast future budget trends
 
 ---
 
 # ✨ Key Features
 
-## 📊 Interactive Power Dashboard
+## 📊 Interactive Dashboard
 
-The Streamlit dashboard provides multiple analytical sections.
+The Streamlit dashboard provides multiple analytical sections for exploring government budget data.
 
 ### 📈 Macro Historical Trends
 
-Visualizes total government expenditure over time and allows users to compare budget trends across countries.
+Visualizes total government expenditure over time and allows users to compare budget trends across different countries.
 
 ### 🥧 Sector Structural Analysis
 
-Analyzes how government budgets are distributed among major sectors such as:
+Analyzes how government budgets are distributed among major sectors:
 
-- Defense
-- Education
-- Health
-- Infrastructure
-- Agriculture
-- Social Welfare
-- State Transfers
-- Interest Payments
-- Administration & Others
+- 🛡️ Defense
+- 🎓 Education
+- 🏥 Health
+- 🏗️ Infrastructure
+- 🌾 Agriculture
+- 🤝 Social Welfare
+- 🏛️ State Transfers
+- 💰 Interest Payments
+- 🏢 Administration & Others
 
 ### 🔍 Fiscal Anomaly Detection
 
-Uses **Z-score analysis** to identify years where government spending significantly differs from historical patterns.
+Uses **Z-score analysis** to identify years where government spending significantly differs from historical spending patterns.
 
 ### 🔬 Economic Research Lab
 
-Provides:
+Provides advanced analytical capabilities including:
 
 - Sector correlation analysis
-- Budget volatility
+- Budget volatility analysis
 - Rolling statistics
 - Trend analysis
 - Polynomial forecasting
@@ -100,128 +104,26 @@ Provides:
 ```text
 global-budget-analytics/
 │
-├── main_dashboard.py
-├── advance_query.py
-├── budget_volatility.py
-├── correlations.py
-├── defense_social.py
-├── forecasting_engine.py
-├── outlier_det.py
-├── python_sql.py
+├── 📄 main_dashboard.py
+├── 📄 advance_query.py
+├── 📄 budget_volatility.py
+├── 📄 correlations.py
+├── 📄 defense_social.py
+├── 📄 forecasting_engine.py
+├── 📄 outlier_det.py
+├── 📄 python_sql.py
 │
-├── Master_Global_Budgets_Historical.csv
-├── requirements.txt
-└── README.md
-````
+├── 📊 Master_Global_Budgets_Historical.csv
+├── 📦 requirements.txt
+├── 📘 README.md
+│
+└── 📸 screenshots/
+    ├── dashboard.png
+    ├── trends.png
+    ├── sector_analysis.png
+    ├── anomaly_detection.png
+    └── analytics.png
 
----
-
-# 🗄️ Database Architecture
-
-The project uses a normalized **3-table MySQL relational database**.
-
-```text
-┌─────────────────┐
-│    countries    │
-├─────────────────┤
-│ country_id PK   │
-│ country_name    │
-└────────┬────────┘
-         │
-         │ 1:N
-         ▼
-┌─────────────────┐
-│     budgets     │
-├─────────────────┤
-│ budget_id PK    │
-│ country_id FK   │
-│ year            │
-│ total_budget    │
-└────────┬────────┘
-         │
-         │ 1:N
-         ▼
-┌────────────────────────┐
-│   sector_allocations   │
-├────────────────────────┤
-│ allocation_id PK       │
-│ budget_id FK           │
-│ sector_name            │
-│ allocated_percentage   │
-│ allocated_amount       │
-└────────────────────────┘
-```
-
-### Database Tables
-
-### `countries`
-
-Stores unique country information.
-
-### `budgets`
-
-Stores yearly total government expenditure.
-
-### `sector_allocations`
-
-Stores sector-wise budget allocation and percentage.
-
----
-
-# 📚 Sectors Covered
-
-The project tracks the following sectors:
-
-```text
-Defense
-Education
-Health
-Interest Payments
-Infrastructure
-Agriculture
-State Transfers
-Social Welfare
-Administration and Others
-```
-
----
-
-# 🚀 Installation & Setup
-
-## 1️⃣ Clone the Repository
-
-```bash
-git clone https://github.com/your-username/global-budget-analytics.git
-
-cd global-budget-analytics
-```
-
----
-
-## 2️⃣ Create a Virtual Environment
-
-```bash
-python -m venv venv
-```
-
-Activate it on Windows:
-
-```bash
-venv\Scripts\activate
-```
-
----
-
-## 3️⃣ Install Dependencies
-
-```bash
-pip install -r requirements.txt
-```
-
-Or:
-
-```bash
-pip install streamlit pandas numpy plotly sqlalchemy mysql-connector-python pymysql
 ```
 
 ---
@@ -369,74 +271,6 @@ The same percentage and amount pattern is used for the remaining sectors.
 
 ---
 
-# 🧮 Analytical Techniques
-
-## SQL Window Functions
-
-Used for:
-
-* Rolling averages
-* Historical rankings
-* Sector dominance
-* Year-over-year analysis
-
----
-
-## 📉 Budget Volatility
-
-The project calculates a rolling volatility index using:
-
-```text
-Volatility Index =
-(Standard Deviation / Mean) × 100
-```
-
-This helps identify periods with significant changes in government spending.
-
----
-
-## 🔍 Z-Score Anomaly Detection
-
-Z-score analysis is used to identify unusually high or low government expenditure.
-
-```text
-Z = (X - Mean) / Standard Deviation
-```
-
-Years with unusually large deviations can be flagged as potential fiscal anomalies.
-
----
-
-## 🔗 Pearson Correlation
-
-Pearson correlation is used to measure relationships between different government sectors.
-
-For example:
-
-```text
-Education ↔ Health
-Defense ↔ Infrastructure
-Social Welfare ↔ Education
-```
-
----
-
-## 🔮 Budget Forecasting
-
-The forecasting engine uses NumPy polynomial fitting to identify historical trends and project future budget values.
-
-Supported polynomial degrees:
-
-```text
-Degree 1 → Linear Trend
-Degree 2 → Quadratic Trend
-Degree 3 → Cubic Trend
-```
-
-Forecasts can be extended toward **2035+**, depending on the available historical data.
-
----
-
 # 🧪 Run Individual Analytics
 
 ### ETL
@@ -516,10 +350,6 @@ engine = create_engine(
 )
 ```
 
-> ⚠️ Do not upload real database passwords to GitHub.
-
-For production projects, use environment variables or a `.env` file.
-
 ---
 
 # 📦 Requirements
@@ -550,22 +380,6 @@ The platform can be used to answer questions such as:
 * Which sectors have strong positive or negative relationships?
 * How does civilian spending compare with defense spending?
 * What could future government budgets look like based on historical trends?
-
----
-
-# 🛠️ Technology Stack
-
-| Technology      | Purpose                                  |
-| --------------- | ---------------------------------------- |
-| 🐍 Python       | Data processing and analytics            |
-| 🐼 Pandas       | Data manipulation                        |
-| 🔢 NumPy        | Statistical calculations and forecasting |
-| 🗄️ MySQL       | Relational database                      |
-| 📊 Streamlit    | Interactive dashboard                    |
-| 📈 Plotly       | Data visualization                       |
-| 🧮 SQL          | Database analytics                       |
-| 🔧 SQLAlchemy   | Database connectivity                    |
-| 🔗 Git & GitHub | Version control                          |
 
 ---
 
